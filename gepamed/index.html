@@ -1,0 +1,739 @@
+<html>
+
+<head>
+    <title>Гепамед - диагностика и лечение гепатита С</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Диагностика и лечение гепатита С">
+    <meta name="keywords" content="гепатит С, гепатит C, лечение гепатита, гепамед, gepamed, цирроз печени, диагностика гепатита, гепатит ц, симптомы гепатита, обследование на вирус гепатита С, хеликс гепамед, хеликс, helix">
+    <meta name="yandex-verification" content="44a35817bba129a8">
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <script src="Static/bundles/script.js"></script>
+    <link href="Static/bundles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="main-header" id="top-menu">
+        <div class="container">
+            <div class="main-header__top space-between-align hidden-xs">
+                <div class="gepamed gepalink">
+                    <img src="Static/Images/gepamed-logo.png" alt="" width="" height="70" class="img-responsive">
+                    <span>Эксперт в лечении болезней печени</span>
+                </div>
+                <div class="contacts text-center">
+                    <a href="tel:8(800)7000303" class="hvr-icon-pulse-shrink"> 8 (800) 700 03 03</a>
+                    <a href="mailto:gepamed@helix.ru" class="hvr-icon-pulse-shrink">gepamed@helix.ru</a>
+                </div>
+                <a href="http://www.helix.ru/" class="helix text-center">
+                    <span>при поддержке</span>
+                    <img src="Static/Images/helix-logo.png" alt="" width="157" height="54" class="img-responsive">
+                    <span>Лабораторная служба Хеликс</span>
+                </a>
+            </div>
+            <nav role="navigation" class="clearfix">
+                <button id="nav-collapse" class="hamburger hamburger--squeeze">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </button>
+                <img src="Static/Images/gepamed-logo.png" alt="" width="167" height="43" class="visible-xs-inline-block gepalink">
+                <div class="visible-xs-block contacts--mobile">
+                    <a href="tel:8(800)7000303" class=""></a>
+                    <a href="mailto:gepamed@helix.ru" class=""></a>
+                </div>
+                <div class="menu-toggler">
+                    <ul class="navigation space-between-align">
+                        <li class=""><a href="#hypo">Гепатит C</a></li>
+                        <li class=""><a href="#doctors">Врачи</a></li>
+                        <li class="active"><a href="#medication">Лечение</a></li>
+                        <li class=""><a href="#pass">Как передается</a></li>
+                        <li class=""><a href="#symptoms">Симптомы</a></li>
+                        <li class=""><a href="#inspection">Кому нужно обследоваться</a></li>
+                    </ul>
+                    <a href="http://www.helix.ru/" class="helix helix--mobile visible-xs-block">
+                        <span>при поддержке</span>
+                        <img src="Static/Images/helix-logo.png" alt="" width="128" height="43" class="">
+                        <span>Лабораторная служба Хеликс</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="modal fade bs-example-modal-sm" id="modal-message" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h4 id="modal-title">Ваша заявка принята!</h4>
+                    <p id="modal-text">В ближайшее время с вами свяжется специалист Контакт-центра для консультации по вашему вопросу</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="appointment" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="text-center modal-title">Записаться на прием</h1>
+                    <form action="" class="form-horizontal" id="appointment-from-modal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-5" for="Name">Ваше имя: </label>
+                            <div class="col-lg-7">
+                                <input class="form-control" id="Name" name="Name" type="text" value="">
+                                <span class="vaildation-message" for="Name" style="display: none;"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-5" for="Phone">Ваш телефон: </label>
+                            <div class="col-lg-7">
+                                <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                <span class="vaildation-message" for="Phone" style="display: none;"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7 col-lg-offset-5">
+                                <button type="button" class="button button--order" onclick="SendAppointmentRequest($('#appointment-from-modal'), true); return false;">Записаться</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="consultation" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <h1 class="text-center modal-title">Получить консультацию</h1>
+                    <form action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="Name">Ваше имя: </label>
+                            <div class="col-lg-8">
+                                <input class="form-control" id="Name" name="Name" type="text" value="">
+                                <span class="vaildation-message" for="Name" style="display: none;">Произошло ужасное!</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="Phone">Ваш телефон: </label>
+                            <div class="col-lg-8">
+                                <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                <span class="vaildation-message" for="Phone" style="display: none;">Произошло ужасное!</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="Email">Ваш e-mail: </label>
+                            <div class="col-lg-8">
+                                <input class="form-control" id="Email" name="Email" type="text" value="">
+                                <span class="vaildation-message" for="Email" style="display: none;">Произошло ужасное!</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-4">
+                                <button type="button" class="button button--order" onclick="SendConsultationRequest($('#consultation'));">Записаться</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="test-btn hvr-bounce-in" onclick="location.href = 'http://main.cur.helix.ru/preorder/gepamed';">
+    <span>Сдать тест на гепатит C</span>
+</button>
+    <section id="hypo">
+        <div class="main-section main-section--hypo-top">
+            <div class="container">
+                <h1 class="main-title text-center">Гепатит С</h1>
+                <ul class="hypo-property space-between-align">
+                    <li class="hypo-property__item hypo-property__item--virus">Вирусное поражение печени человека</li>
+                    <li class="hypo-property__item hypo-property__item--people">Может развиться у любого человека</li>
+                    <li class="hypo-property__item hypo-property__item--cause">Приводит к циррозу или раку печени</li>
+                    <li class="hypo-property__item hypo-property__item--alarm">
+                        Многие люди даже не подозревают, что заражены гепатитом С
+                    </li>
+                    <li class="hypo-property__item hypo-property__item--healthy">
+                        В большинстве случаев гепатит С излечим
+                    </li>
+                </ul>
+                <div class="row form-wrapper">
+                    <div class="col-lg-6 col-md-6 form-descr">
+                        <h2 class="form-descr__title">
+                            Не откладывайте лечение,<br> запишитесь на прием <br> прямо сейчас
+                        </h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <form action="" class="form-main form-horizontal" id="appointment-from">
+                            <div class="form-group">
+                                <label class="control-label col-lg-5" for="Name">Ваше имя: </label>
+                                <div class="col-lg-7">
+                                    <input class="form-control" id="Name" name="Name" type="text" value="">
+                                    <span class="vaildation-message" for="Name" style="display: none;">Произошло ужасное!</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-lg-5" for="Phone">Ваш телефон: </label>
+                                <div class="col-lg-7">
+                                    <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                    <span class="vaildation-message" for="Phone" style="display: none;">Произошло ужасное!</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-7 col-lg-offset-5">
+                                    <button type="button" class="button button--form" onclick="SendAppointmentRequest($('#appointment-from'), false); return false;">Записаться</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-section main-section--hypo-bottom">
+            <div class="container">
+                <img src="Static/Images/gepamed-logo.png" class="center-img" alt="" width="300" height="79">
+                <h3 class="secondary-title text-center">Диагностика и лечение гепатита С</h3>
+                <ul class="diagnostics-property">
+                    <li class="diagnostics-property__item expert">Экспертный уровень оценки</li>
+                    <li class="diagnostics-property__item confidence">Полная конфиденциальность</li>
+                    <li class="diagnostics-property__item individual">Индивидуальный подход</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="doctors">
+        <div class="main-section main-section--doctors">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-6">
+                        <div>Прием ведет:</div>
+                        <h2 class="doctor-name">Фадеев Кирилл Александрович</h2>
+                        <p>
+                            Врач-инфекционист-гепатолог. Кандидат медицинских наук, доцент кафедры Социально значимых инфекций Первого Санкт-Петербургского государственного медицинского университета имени академика И.П. Павлова.
+                        </p>
+                        <ul class="doctor-properties">
+                            <li class="doctor-properties__item">Стаж работы 10 лет.</li>
+                            <li class="doctor-properties__item">
+                                С 2006 по 2009 врач-инфекционист-ординатор, КИБ им. С.П. Боткина.
+                            </li>
+                            <li class="doctor-properties__item">
+                                С 2009 по 2016 врач-нфекционист-гепатолог в СПбГБУЗ Центр по профилактике и борьбе со СПИД и инфекционными заболеваниями.
+                            </li>
+                            <li class="doctor-properties__item">
+                                Постоянный член Американской ассоциации по изучению печени AASLD с 2015 г.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-4 clearfix text-tablet-center">
+                        <div class="doctor-img-container pull-right">
+                            <img src="Static/Images/Fadeev.jpg" class="img-responsive" width="310" height="395" alt="Фадеев Кирилл Александрович">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="medication">
+        <div class="main-section main-section--medication-top">
+            <div class="container">
+                <h2 class="common-title text-center">Выберите любой удобный вариант лечения</h2>
+                <div class="cards-wrapper clearfix">
+                    <table class="packages-content packages-content--cards">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <div class="card card--appointment">
+                                        <div class="card__top-img">
+                                            <img src="Static/Images/default-package.png" width="120" height="141" alt="">
+                                        </div>
+                                        <span class="card__appointment-descr">Консультация <br> врача-инфекциониста-гепатолога</span>
+                                        <div class="card__actual-price">1990&nbsp;<span class="rouble">Р</span></div>
+                                        <div class="card__main-block text-center">
+                                            <button class="button button--order" data-toggle="modal" data-target="#appointment">Записаться</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="main-cards-block packages-content__item">
+                                    <div class="card">
+                                        <div class="card__top-img">
+                                            <img src="Static/Images/base-package.png" width="" height="130" alt="">
+                                        </div>
+                                        <h4 class="card__title">Пакет "БАЗОВЫЙ"</h4>
+                                        <div class="card__main-block text-center">
+                                            <div class="card__old-price">6000&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__actual-price">4760&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__result-price-wrapper" data-target="webuiPopover0">
+                                                <span>при наличии результатов всех необходимых анализов</span> <br>
+                                                <span class="card__result-price">4460&nbsp;<span class="rouble">Р</span></span>
+                                            </div>
+                                            <button type="button" class="button button--order" data-toggle="modal" data-target="#order-package9f8586f2-8656-4213-9535-618c96d833fb">Заказать</button>
+                                            <div class="modal fade" tabindex="-1" id="order-package9f8586f2-8656-4213-9535-618c96d833fb" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h1 class="text-center modal-title">Заказать услугу</h1>
+                                                            <form action="" class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Name">Ваше имя: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control" id="Name" name="Name" type="text" value="">
+                                                                        <span class="vaildation-message" for="Name" style="display: none;"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Phone">Ваш телефон: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                                                        <span class="vaildation-message" for="Phone" style="display: none;"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <input id="PackageName" name="PackageName" type="hidden" value="БАЗОВЫЙ">
+                                                                <input id="Hxid" name="Hxid" type="hidden" value="40-118">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-lg-offset-4">
+                                                                        <button type="button" class="button button--order" onclick="SendOrderPackageRequest($('#order-package9f8586f2-8656-4213-9535-618c96d833fb'));">Заказать</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="main-cards-block packages-content__item">
+                                    <div class="card">
+                                        <div class="card__top-img">
+                                            <img src="Static/Images/standart-package.png" width="" height="130" alt="">
+                                        </div>
+                                        <h4 class="card__title">Пакет "СТАНДАРТ"</h4>
+                                        <div class="card__main-block text-center">
+                                            <div class="card__old-price">8000&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__actual-price">6750&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__result-price-wrapper" data-target="webuiPopover1">
+                                                <span>при наличии результатов всех необходимых анализов</span> <br>
+                                                <span class="card__result-price">5850&nbsp;<span class="rouble">Р</span></span>
+                                            </div>
+                                            <button type="button" class="button button--order" data-toggle="modal" data-target="#order-package568704dd-28b8-4e16-8e14-30f53b2a0892">Заказать</button>
+                                            <div class="modal fade" tabindex="-1" id="order-package568704dd-28b8-4e16-8e14-30f53b2a0892" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h1 class="text-center modal-title">Заказать услугу</h1>
+                                                            <form action="" class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Name">Ваше имя: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control" id="Name" name="Name" type="text" value="">
+                                                                        <span class="vaildation-message" for="Name" style="display: none;"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Phone">Ваш телефон: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                                                        <span class="vaildation-message" for="Phone" style="display: none;"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <input id="PackageName" name="PackageName" type="hidden" value="СТАНДАРТ">
+                                                                <input id="Hxid" name="Hxid" type="hidden" value="40-045">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-lg-offset-4">
+                                                                        <button type="button" class="button button--order" onclick="SendOrderPackageRequest($('#order-package568704dd-28b8-4e16-8e14-30f53b2a0892'));">Заказать</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="main-cards-block packages-content__item">
+                                    <div class="card">
+                                        <div class="card__top-img">
+                                            <img src="Static/Images/premium-package.png" width="" height="130" alt="">
+                                        </div>
+                                        <h4 class="card__title">Пакет "ПРЕМИУМ"</h4>
+                                        <div class="card__main-block text-center">
+                                            <div class="card__old-price">12000&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__actual-price">10010&nbsp;<span class="rouble">Р</span></div>
+                                            <div class="card__result-price-wrapper" data-target="webuiPopover2">
+                                                <span>при наличии результатов всех необходимых анализов</span> <br>
+                                                <span class="card__result-price">9800&nbsp;<span class="rouble">Р</span></span>
+                                            </div>
+                                            <button type="button" class="button button--order" data-toggle="modal" data-target="#order-package8ad725d8-9f4a-4c6a-b0f7-6fe46f63c2a8">Заказать</button>
+                                            <div class="modal fade" tabindex="-1" id="order-package8ad725d8-9f4a-4c6a-b0f7-6fe46f63c2a8" role="dialog" aria-labelledby="myLargeModalLabel">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h1 class="text-center modal-title">Заказать услугу</h1>
+                                                            <form action="" class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Name">Ваше имя: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control" id="Name" name="Name" type="text" value="">
+                                                                        <span class="vaildation-message" for="Name" style="display: none;">Произошло ужасное!</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-lg-4" for="Phone">Ваш телефон: </label>
+                                                                    <div class="col-lg-8">
+                                                                        <input class="form-control phone-mask" id="Phone" name="Phone" type="tel" value="" placeholder="" maxlength="18">
+                                                                        <span class="vaildation-message" for="Phone" style="display: none;">Произошло ужасное!</span>
+                                                                    </div>
+                                                                </div>
+                                                                <input id="PackageName" name="PackageName" type="hidden" value="ПРЕМИУМ">
+                                                                <input id="Hxid" name="Hxid" type="hidden" value="40-275">
+                                                                <div class="row">
+                                                                    <div class="col-lg-8 col-lg-offset-4">
+                                                                        <button type="button" class="button button--order" onclick="SendOrderPackageRequest($('#order-package8ad725d8-9f4a-4c6a-b0f7-6fe46f63c2a8'));">Заказать</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="main-section main-section--medication-bottom">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="packages-content packages-content--main-table">
+                        <tbody>
+                            <tr class="packages-content__title">
+                                <td></td>
+                                <td class="packages-content__item text-grey">БАЗОВЫЙ</td>
+                                <td class="packages-content__item text-grey">СТАНДАРТ</td>
+                                <td class="packages-content__item text-grey">ПРЕМИУМ</td>
+                            </tr>
+                            <tr class="packages-content__row">
+                                <td>
+                                    <p><strong>ПЕРВИЧНЫЙ ПРИЁМ</strong></p>
+                                    <p>врач-гепатолог, высшей категории</p>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__row packages-content--white">
+                                <td>
+                                    <p><strong>ПОВТОРНЫЙ ПРИЁМ</strong></p>
+                                    <p>врач-гепатолог, высшей категории</p>
+                                </td>
+                                <td class="packages-content__item">2шт</td>
+                                <td class="packages-content__item">4шт</td>
+                                <td class="packages-content__item">неограниченно</td>
+                            </tr>
+                            <tr class="packages-content__row">
+                                <td>
+                                    <p>прпрпр</p>
+                                    <a href="" class="detail-link" data-id="3">Подробнее <i class="glyphicon glyphicon-menu-down"></i></a>
+                                </td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded" data-id="3" style="display: none;">
+                                <td class="">мимиим</td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__row packages-content--white">
+                                <td>
+                                    <p>ииии ррр ттт</p>
+                                    <a href="" class="detail-link" data-id="4">Подробнее <i class="glyphicon glyphicon-menu-down"></i></a>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded packages-content--white" data-id="4" style="display: none;">
+                                <td class="">ооо</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded packages-content--white" data-id="4" style="display: none;">
+                                <td class="">ггг</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded packages-content--white" data-id="4" style="display: none;">
+                                <td class="">тест тест
+                                </td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__row">
+                                <td>
+                                    <p>Полное обследование и мониторинг лечение гепатита С</p>
+                                    <a href="" class="detail-link" data-id="5">Подробнее <i class="glyphicon glyphicon-menu-down"></i></a>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded" data-id="5" style="display: none;">
+                                <td class="">Клинический анализ крови с лейкоцитарной формулой и СОЭ</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded" data-id="5" style="display: none;">
+                                <td class=""> Анализы крови перед началом лечения</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                            <tr class="packages-content__expanded" data-id="5" style="display: none;">
+                                <td class="">Контроль активности вируса во время и после лечения</td>
+                                <td class="packages-content__item">2 шт</td>
+                                <td class="packages-content__item">3 шт</td>
+                                <td class="packages-content__item">5 шт</td>
+                            </tr>
+                            <tr class="packages-content__row packages-content--white">
+                                <td>
+                                    <p><span class="Catalog-ItemInfoTable-Title">Эффективность лечения препаратами PEG-интерферон и Рибавирин</span></p>
+                                </td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item"> <span class="text-grey">–</span>
+                                </td>
+                                <td class="packages-content__item">+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pass">
+        <div class="main-section main-section--pass">
+            <div class="container">
+                <h2 class="common-title text-center">Пути передачи вируса гепатита С</h2>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <ul class="ways-pass">
+                            <li class="ways-pass__item toothbrush">
+                                Совместное использование бритв, маникюрных принадлежностей, зубных щеток с человеком, инфицированным гепатитом С
+                            </li>
+                            <li class="ways-pass__item sex">При незащищенном половом акте с носителем вируса</li>
+                            <li class="ways-pass__item gemodialez">При гемодиализе (аппарат «искусственная почка»)</li>
+                            <li class="ways-pass__item tattoo">
+                                Выполнение пирсинга и татуировок некачественно обработанными инструментами после предыдущего использования для носителя гепатита С
+                            </li>
+                            <li class="ways-pass__item med-staff">
+                                Медицинским работникам – при проведении любых медицинских манипуляций, связанных в кровью
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-md-5 pull-right">
+                        <ul class="ways-pass">
+                            <li class="ways-pass__item transfusion">При переливании препаратов крови</li>
+                            <li class="ways-pass__item needle">При случайном уколе использованной иглой</li>
+                            <li class="ways-pass__item stomatology">
+                                При лечении в стоматологическом кабинете, где не соблюдаются правила обработки инструментов
+                            </li>
+                            <li class="ways-pass__item injections">При внутривенных инъекциях</li>
+                            <li class="ways-pass__item drugs">
+                                При использовании внутривенных наркотических средств, вводимых одним с носителем вируса шприцом и иглой
+                            </li>
+                            <li class="ways-pass__item birth">При рождении ребенка от матери, у которой есть гепатит С</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="symptoms">
+        <div class="main-section main-section--symptoms">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 pull-right">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <h2 class="common-title">Симптомы</h2>
+                                <p>
+                                    Гепатит С называют «ласковым убийцей» из-за способности маскировать истинную причину под видом множества других заболеваний. Клинические проявления гепатита С крайне скудны, и зачастую человек на протяжении многих лет относит все нижеперечисленные симптомы
+                                    к другим заболеваниям или банальному переутомлению.
+                                </p>
+                                <p class="important-paragraph">
+                                    Острая инфекция в большинстве случаев клинически не диагностируется, протекает преимущественно в субклинической – безжелтушной форме, составляющей <span>до 95%</span> всех случаев острого вирусного гепатита С.
+                                </p>
+                                <p>
+                                    От момента заражения до клинических проявлений проходит от 2-3 недель до 6-12 месяцев. В случае острого начала болезни начальный период длится 2-3 недели. Подъем температуры отмечается редко. Острый гепатит С диагностируется очень редко и чаще случайно.
+                                </p>
+                            </div>
+                            <div class="col-lg-12 col-md-6">
+                                <div class="symptoms-list-wrapper">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <ul class="symptoms-list">
+                                                <li class="symptoms-list__item">Слабость и утомляемость, снижение работоспособности</li>
+                                                <li class="symptoms-list__item">Сонливость</li>
+                                                <li class="symptoms-list__item">Эмоциональная неустойчивость</li>
+                                                <li class="symptoms-list__item">Раздражительность</li>
+                                                <li class="symptoms-list__item">Вялость</li>
+                                                <li class="symptoms-list__item">Потеря аппетита</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <ul class="symptoms-list">
+                                                <li class="symptoms-list__item">
+                                                    Тяжесть или дискомфорт в животе (справа, где расположена печень)
+                                                </li>
+                                                <li class="symptoms-list__item">Тошнота</li>
+                                                <li class="symptoms-list__item">Потемнение мочи</li>
+                                                <li class="symptoms-list__item">Изменение цвета кала (становится светлым)</li>
+                                                <li class="symptoms-list__item">Желтуха</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="inspection">
+        <div class="main-section main-section--inspection-top">
+            <div class="container">
+                <h2 class="common-title common-title--white text-center">Кому рекомендуется обследование <br> на вирус гепатита С?</h2>
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 text-center">
+                        <div class="img-inspection-wrapper">
+                            <img src="Static/Images/recomendation.png" alt="">
+                        </div>
+                        <p class="inspection-descr text-left">
+                            <span>Сегодня гепатит С встречается гораздо чаще, чем вы думаете.</span>
+                            <strong>Любой человек,</strong> независимо от его пола, возраста, социального статуса и образа жизни может быть заражен хроническим вирусным гепатитом.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-1 col-md-6">
+                        <ul class="inspections-list">
+                            <li class="inspections-list__item"><span>Беременным женщинам (в I и III триместре)</span></li>
+                            <li class="inspections-list__item"><span>Реципиентам крови и ее компонентов, органов и тканей</span></li>
+                            <li class="inspections-list__item"><span>Донорам крови и ее компонентов, органов и тканей</span></li>
+                            <li class="inspections-list__item"><span>Пациентам после проведения полостных операций</span></li>
+                            <li class="inspections-list__item"><span>Персоналу медицинских организаций</span></li>
+                            <li class="inspections-list__item"><span>Людям, имевшим незащищенный секс</span></li>
+                            <li class="inspections-list__item"><span>Людям, часто меняющим половых партнеров</span></li>
+                            <li class="inspections-list__item">
+                                <span>Потребителям инъекционных наркотиков и их половым партнерам</span>
+                            </li>
+                            <li class="inspections-list__item"><span>Мужчинам, практикующим гомосексуальные контакты</span></li>
+                            <li class="inspections-list__item">
+                                <span>
+                                Лицам, оказывающим услуги сексуального характера, и их
+                                партнерам
+                            </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-section main-section--inspection-buttons">
+            <div class="container">
+                <div class="bottom-btn-block space-between-align">
+                    <button class="button inspection-button" onclick="location.href = 'http://main.cur.helix.ru/preorder/gepamed';">
+    Сдать тест на наличие <br> гепатита С
+</button>
+                    <button class="button inspection-button" data-toggle="modal" data-target="#appointment">Записаться <br> на прием к врачу</button>
+                    <button class="button inspection-button" data-toggle="modal" data-target="#consultation">Получить <br> консультацию</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="main-footer__wrapper space-between-align">
+                <div class="gepamed">
+                    <img src="Static/Images/gepamed-logo.png" alt="" width="190" height="" class="img-responsive">
+                    <span>Эксперт в лечении болезней печени</span>
+                </div>
+                <div class="contacts">
+                    <a href="tel:8(800)7000303"> 8 (800) 700 03 03</a>
+                    <a href="mailto:gepamed@helix.ru">gepamed@helix.ru</a>
+                </div>
+                <span class="copyright">© 2016 Helix</span>
+                <a href="http://www.helix.ru/" class="helix text-center">
+                    <span>При поддержке <br> Лабораторная служба Хеликс</span>
+                    <img src="Static/Images/helix-logo.png" alt="" width="140" height="" class="img-responsive">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter42009604 = new Ya.Metrika({
+                        id: 42009604,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) {}
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function() {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript>
+        &lt;div&gt;&lt;img src="https://mc.yandex.ru/watch/42009604" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script src="Static/Scripts/main.js"></script>
+</body>
+
+</html>
