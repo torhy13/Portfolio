@@ -41,6 +41,7 @@ body {
   font-weight: 400;
   font-family: Tahoma;
   background: url(../img/bg.png);
+  min-width: 325px;
 }
 
 .header-main{
@@ -98,8 +99,7 @@ body {
     
 .container {
     margin: 0 auto;
-    max-width: 1024px;
-    min-width: 768px; 
+    max-width: 768px; 
     padding-left: 35px;
     padding-right: 35px; 
     position: relative;
