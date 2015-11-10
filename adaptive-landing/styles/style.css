@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  min-width: 600px;
+}
+header,
+footer {
+  display: block;
+}
+.container {
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: 520px;
+}
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+.main-header {
+  background-color: #101a24;
+  margin-bottom: 40px;
+  min-height: 125px;
+  padding-top: 65px;
+}
+.main-header .logo {
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 70px;
+  height: 80px;
+  float: left;
+  vertical-align: middle;
+  width: 210px;
+}
+.main-header .title {
+  color: white;
+  display: inline-block;
+  padding-top: 25px;
+}
+.main-header .title h1 {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 25px;
+  text-shadow: 1px 1px 1px #000;
+}
+.news {
+  padding-bottom: 20px;
+}
+.news h2 {
+  color: #ff0e00;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #b2b2b2;
+  padding-bottom: 15px;
+}
+.news-item {
+  border-top: 1px solid black;
+  padding: 10px 0;
+}
+.news-item-content {
+  padding-bottom: 15px;
+}
+.news-item-img {
+  height: 120px;
+  overflow: hidden;
+  width: 120px;
+  float: left;
+}
+.news-item-text {
+  width: 375px;
+  float: right;
+}
+.news-item-text .title-link {
+  color: black;
+  text-decoration: none;
+}
+.news-item-text .title-link:hover {
+  color: #003162;
+}
+.news-item-text h3 {
+  font-size: 18px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.news-item-text p {
+  font-size: 14px;
+  line-height: 17px;
+}
+.news-item-btn {
+  background-color: #ff0e00;
+  background: linear-gradient(to bottom, #ff0e00, #b50900);
+  color: white;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 150px;
+  text-shadow: 1px 1px 1px #870700;
+}
+.news-item-btn:hover {
+  background: linear-gradient(to top, #ff0e00, #b50900);
+}
+.offers {
+  background-color: #28313a;
+  padding: 40px 0;
+}
+.offers h2 {
+  color: #ff0e00;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #1c2228;
+  padding-bottom: 15px;
+}
+.offers-item {
+  display: block;
+  float: left;
+  height: 120px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  overflow: hidden;
+  width: 240px;
+}
+.offers-item:nth-child(odd) {
+  margin-right: 0;
+}
+.offers-item:hover {
+  opacity: 0.5;
+}
+.offers a img {
+  border: none;
+}
+.page-footer {
+  background-color: #101a24;
+  padding: 20px 0 40px 0;
+}
+.page-footer h2 {
+  color: #ffb400;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px #0b1219;
+  padding-bottom: 15px;
+}
+.contacts {
+  float: left;
+  width: 200px;
+}
+.contacts ul {
+  list-style: none;
+}
+.contacts ul li {
+  color: white;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.contacts a {
+  border-bottom: 2px solid #979ba0;
+  color: white;
+  text-decoration: none;
+}
+.contacts a:hover {
+  border-color: #ff0e00;
+  color: #ff0e00;
+}
+.write-us {
+  float: right;
+}
+.form-wrapper {
+  background-color: #28313a;
+  padding: 10px;
+}
+.form-wrapper input {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 10px 15px 20px 13px;
+  width: 210px;
+}
+.form-wrapper textarea {
+  border: none;
+  height: 65px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  width: 230px;
+}
+.form-wrapper ::-webkit-input-placeholder {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  line-height: 16px;
+}
+.form-wrapper ::-moz-placeholder {
+  color: black;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+.form-wrapper :-moz-placeholder {
+  color: black;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+.form-wrapper :-ms-input-placeholder {
+  color: black;
+  font-size: 14px;
+}
+.form-wrapper button {
+  background-color: #ff0e00;
+  background: linear-gradient(to bottom, #fd0e00, #b50900);
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #870700;
+  width: 240px;
+}
+.form-wrapper button:hover {
+  background: linear-gradient(to top, #fd0e00, #b50900);
+}
+@media (min-width: 800px) {
+  .container {
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 820px;
+  }
+  .title span {
+    display: none;
+  }
+  .news-item {
+    float: left;
+    padding-right: 20px;
+    width: 390px;
+  }
+  .news-item-text {
+    width: 250px;
+  }
+  .offers-item {
+    margin-right: 50px;
+  }
+  .offers-item:nth-child(2n+1) {
+    margin-right: 50px;
+  }
+  .offers-item:nth-child(3n+1) {
+    margin-right: 0;
+  }
+  .write-us {
+    width: 540px;
+  }
+  .form-wrapper {
+    text-align: right;
+  }
+  .form-wrapper input {
+    width: 490px;
+  }
+  .form-wrapper textarea {
+    width: 510px;
+  }
+  .form-wrapper button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 1120px;
+  }
+  .news-item {
+    float: left;
+    padding-right: 42px;
+    position: relative;
+    width: 345px;
+  }
+  .news-item-text {
+    width: 210px;
+  }
+  .news-item:nth-child(4) {
+    padding-right: 0;
+  }
+  .news .row:after {
+    content: '';
+    background-color: black;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    right: -2px;
+    width: 1120px;
+  }
+  .offers-item {
+    margin-right: 40px;
+    width: 250px;
+  }
+  .offers-item:nth-child(2n+1) {
+    margin-right: 40px;
+  }
+  .offers-item:nth-child(3n+1) {
+    margin-right: 40px;
+  }
+  .offers-item:nth-child(5) {
+    margin-right: 0;
+  }
+  .write-us {
+    width: 775px;
+  }
+  .form-wrapper input {
+    width: 725px;
+  }
+  .form-wrapper textarea {
+    width: 745px;
+  }
+}
