@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="wrapper__cell">
+			<section class="form-block">
+				<div class="login-block">
+					<div class="err-message">
+					<span class="err-message__text-warning">Логин или пароль указаны неверно. Попробуйте еще раз.</span>
+				</div>
+					<div class="main-form-wrapper">
+						<div class="main-form-wrapper__item main-form-wrapper__item--left">
+							<div class="logo logo--form logo--vds"></div>
+							<form action="" method="post" class="login-form">
+								<div class="login-form__row">
+									<input type="text" id="login" placeholder="Логин" class="login-control">
+								</div>
+								<div class="login-form__row">
+									<input type="password" id="password" placeholder="Пароль" class="login-control">
+								</div>
+								<div class="login-form__row clearfix">
+									<div class="checkbox">
+										<input type="checkbox" id="remember-me">
+										<label for="remember-me">Запомнить меня</label>
+									</div>
+									<a href="#" class="recover-link recover-link--right">Восстановить пароль</a>
+								</div>
+								<div class="login-form__row">
+									<button type="submit" id="submit-btn" class="btn submit-btn">Войти</button>
+								</div>
+							</form>
+						</div>
+						<div class="main-form-wrapper__item main-form-wrapper__item--right">
+							<nav class="login-nav">
+								<a href="#" class="login-nav__item">
+									<span>Хостинг</span>
+								</a>
+								<a href="#" id="vds" class="login-nav__item login-nav__item--active">
+									<span>VDS</span>
+								</a>
+								<a href="#" class="login-nav__item">
+									<span>Интеграторы</span>
+								</a>
+								<a href="#" class="login-nav__item">
+									<span>Вебмастера</span>
+								</a>
+								<a href="#" id="post" class="login-nav__item">
+									<span>Почта</span>
+								</a>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</section> 				
+		</div>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+</html>
