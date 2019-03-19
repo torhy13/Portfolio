@@ -1,0 +1,369 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+@font-face {
+	font-family: "RobotoRegular";
+	src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+	src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "RobotoLight";
+	src: url("../fonts/RobotoLight/RobotoLight.eot");
+	src: url("../fonts/RobotoLight/RobotoLight.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoLight/RobotoLight.woff") format("woff"), url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "RobotoBold";
+	src: url("../fonts/RobotoBold/RobotoBold.eot");
+	src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+body {
+	font-family: 'RobotoRegular', Arial, sans-serif;
+	font-weight: 500;
+}
+
+a:hover,
+a:focus,
+a:visited {
+	text-decoration: none;
+	outline: none;
+}
+
+.cls-1 {
+	transition: 0.3s;
+}
+
+.main-wrapper {
+	background-color: #0288d1;
+	background-image: url(../img/main-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
+}
+
+.main-header {
+	padding-top: 90px;
+}
+
+.main-header__top {
+	width: 400px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: flex-start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.logo {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.logo > a {
+	display: block;
+	width: 182px;
+	height: 75px;
+	background-image: url(../img/logo.svg);
+	background-repeat: no-repeat;
+}
+
+.lang-switch {
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+}
+
+.lang-switch__item {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50px;
+	padding: 10px 0;
+	border-radius: 1.25em;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 10px;
+	text-decoration: none;
+	color: white;
+	transition: 0.3s;
+}
+
+.lang-switch__item--active {
+	background-color: white;
+	color: #0288d1;
+	text-decoration: none;
+}
+
+.lang-switch__item:hover {
+	background-color: #0288d1;
+	color: white;
+}
+
+.left-content-block {
+	padding-top: 45px;
+}
+
+.content-block--right {
+	width: 40%;
+	padding-left: 40px;
+}
+
+.main-title {
+	text-transform: uppercase;
+	line-height: 60px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	margin-bottom: 50px;
+}
+
+.main-title__first-line {
+	font-size: 70px;
+	font-weight: 700;
+	font-family: "RobotoBold";
+}
+
+.main-title__sec-line {
+	font-size: 50px;
+	font-weight: 100;
+	font-family: "RobotoLight";
+}
+
+.main-title__third-line {
+	font-size: 50px;
+	font-weight: 700;
+	font-family: "RobotoBold";
+}
+
+.download-app {
+	margin-bottom: 50px;
+}
+
+.download-app__item {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 70px;
+}
+
+.download-app__item:first-child {
+	margin-right: 10px;
+}
+
+.download-app .gp {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../img/google-play.png);
+}
+
+.download-app .as {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../img/appstore.png);
+}
+
+.link-block {
+	padding-bottom: 30px;
+}
+
+.link-block__item {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	width: 48px;
+	height: 48px;
+	margin-right: 20px;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.link-block__item:hover .cls-1 {
+	fill: #0288d1;
+}
+
+.link-block .web-descr {
+	text-transform: uppercase;
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+	white-space: nowrap;
+	font-weight: 400;
+}
+
+.copyright {
+	font-size: 16px;
+	font-weight: 400;
+	color: white;
+	font-family: "RobotoLight";
+	padding-bottom: 15px;
+}
+
+.slider {
+	position: relative;
+	width: 332px;
+	margin: 0 auto;
+}
+
+.slider__container {
+	width: 326px;
+	height: 616px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.slider .case {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url(../img/case.png);
+	position: absolute;
+	top: -5px;
+	left: 0;
+	z-index: 200;
+	width: 334px;
+	height: 701px;
+}
+
+.slider__control {
+	display: block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 270px;
+	transition: 0.3s;
+	background-image: none !important;
+}
+
+.slider__control--left {
+	left: -100px !important;
+}
+
+.slider__control--right {
+	right: -100px !important;
+}
+
+.slider__control:hover .cls-1 {
+	fill: #0288d1;
+}
+
+.slider__slide-item.item {
+	top: 81px;
+	padding-left: 13px;
+}
+
+@media (max-width: 990px) and (min-width: 768px) {
+
+.copyright {
+	position: absolute;
+	bottom: -770px;
+	margin: 0 -15px;
+	width: 100%;
+}
+
+.slider {
+	padding-bottom: 175px;
+}
+
+}
+
+@media (min-width: 992px) {
+
+.main-title__first-line {
+	white-space: nowrap;
+}
+
+body {
+	min-height: 890px;
+}
+
+}
+
+@media (max-width: 1199px) and (min-width: 990px) {
+
+.download-app {
+	text-align: center;
+}
+
+.download-app__item:first-child {
+	margin-right: 0;
+}
+
+}
+
+@media (max-width: 992px) {
+
+.main-header__top {
+	width: 100%;
+}
+
+.main-title,
+.download-app,
+.link-block,
+.copyright {
+	text-align: center;
+}
+
+}
+
+@media (max-width: 767px) {
+
+.main-title {
+	line-height: 30px;
+}
+
+.main-title__first-line {
+	font-size: 34px;
+}
+
+.main-title__sec-line,
+.main-title__third-line {
+	font-size: 24px;
+}
+
+.download-app__item:first-child {
+	margin-right: 0;
+	margin-bottom: 10px;
+}
+
+.copyright {
+	padding-top: 25px;
+	/* border-top: 1px solid #4bade1;
+	margin: 0 -15px; */
+}
+
+.container {
+	padding: 0 20px;
+}
+
+}
+
+@media (min-width: 2400px) {
+
+.container {
+	width: 1620px; 
+}
+
+}
+
